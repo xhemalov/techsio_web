@@ -1,0 +1,86 @@
+{
+  "/": {
+    "title": "TechSio - E-shop podle vašich pravidel, ne podle omezení platformy",
+    "description": "Vytváříme robustní e-commerce řešení na míru pro střední a velké firmy. Bez limitů, s plnou kontrolou a nekonečnými možnostmi integrace.",
+    "openGraph": {
+      "images": "https://assets.macaly-user-data.dev/cdn-cgi/image/format=webp,width=1200,height=630,fit=crop,quality=90/fmiyg7xfgenllfw0sv5aj2mr/rqshjrhuz6joh86j6qbpervr/d-OP_6Gvjq7yBPlgDv8Lm/logo-techsio.png"
+    }
+  },
+  "/sluzby/ecommerce": {
+    "title": "E-commerce řešení na míru | TechSio",
+    "description": "Pokročilé B2B a B2C e-shopy s funkcemi jako firemní účty, více košíků, rychlý nákup a produktové varianty. Multisklad & Multishop řešení.",
+    "openGraph": {
+      "images": "https://assets.macaly-user-data.dev/cdn-cgi/image/format=webp,width=1200,height=630,fit=crop,quality=90/fmiyg7xfgenllfw0sv5aj2mr/rqshjrhuz6joh86j6qbpervr/d-OP_6Gvjq7yBPlgDv8Lm/logo-techsio.png"
+    }
+  },
+  "/sluzby/integrace": {
+    "title": "Systémové integrace | TechSio",
+    "description": "Propojení s ERP, CRM, účetními systémy, platebními branami a dopravci. Automatizace procesů a API integrace pro váš e-shop.",
+    "openGraph": {
+      "images": "https://assets.macaly-user-data.dev/cdn-cgi/image/format=webp,width=1200,height=630,fit=crop,quality=90/fmiyg7xfgenllfw0sv5aj2mr/rqshjrhuz6joh86j6qbpervr/d-OP_6Gvjq7yBPlgDv8Lm/logo-techsio.png"
+    }
+  },
+  "/sluzby/konzultace": {
+    "title": "E-commerce konzultace | TechSio",
+    "description": "Odborné poradenství v oblasti e-commerce strategie, výběr správného řešení a optimalizace. Strategické poradenství a analýza konkurence.",
+    "openGraph": {
+      "images": "https://assets.macaly-user-data.dev/cdn-cgi/image/format=webp,width=1200,height=630,fit=crop,quality=90/fmiyg7xfgenllfw0sv5aj2mr/rqshjrhuz6joh86j6qbpervr/d-OP_6Gvjq7yBPlgDv8Lm/logo-techsio.png"
+    }
+  },
+  "/sluzby/seo": {
+    "title": "SEO & Reporting | TechSio",
+    "description": "Optimalizace pro vyhledávače a měsíční reporting výkonnosti pro lepší pozice a konverze. Technické SEO a obsahová optimalizace.",
+    "openGraph": {
+      "images": "https://assets.macaly-user-data.dev/cdn-cgi/image/format=webp,width=1200,height=630,fit=crop,quality=90/fmiyg7xfgenllfw0sv5aj2mr/rqshjrhuz6joh86j6qbpervr/d-OP_6Gvjq7yBPlgDv8Lm/logo-techsio.png"
+    }
+  },
+  "/o-nas": {
+    "title": "O nás | TechSio",
+    "description": "Specializujeme se na tvorbu e-shopů a webových stránek na míru. Flexibilní řešení bez omezení platformy pro váš úspěšný byznys.",
+    "openGraph": {
+      "images": "https://assets.macaly-user-data.dev/cdn-cgi/image/format=webp,width=1200,height=630,fit=crop,quality=90/fmiyg7xfgenllfw0sv5aj2mr/rqshjrhuz6joh86j6qbpervr/d-OP_6Gvjq7yBPlgDv8Lm/logo-techsio.png"
+    }
+  },
+  "/portfolio": {
+    "title": "Portfolio | TechSio",
+    "description": "Podívejte se na reálné výsledky našich klientů. Každý projekt je příběhem úspěchu a růstu. 50+ úspěšných projektů.",
+    "openGraph": {
+      "images": "https://assets.macaly-user-data.dev/cdn-cgi/image/format=webp,width=1200,height=630,fit=crop,quality=90/fmiyg7xfgenllfw0sv5aj2mr/rqshjrhuz6joh86j6qbpervr/d-OP_6Gvjq7yBPlgDv8Lm/logo-techsio.png"
+    }
+  },
+  "/proces": {
+    "title": "Proces spolupráce | TechSio",
+    "description": "Jak probíhá spolupráce s námi? Podívejte se na náš proces od konzultace přes návrh až po implementaci a dlouhodobou podporu.",
+    "openGraph": {
+      "images": "https://assets.macaly-user-data.dev/cdn-cgi/image/format=webp,width=1200,height=630,fit=crop,quality=90/fmiyg7xfgenllfw0sv5aj2mr/rqshjrhuz6joh86j6qbpervr/d-OP_6Gvjq7yBPlgDv8Lm/logo-techsio.png"
+    }
+  },
+  "/faq": {
+    "title": "Často kladené otázky | TechSio",
+    "description": "Odpovědi na nejčastější otázky ohledně našich služeb, procesu spolupráce a e-commerce řešení na míru.",
+    "openGraph": {
+      "images": "https://assets.macaly-user-data.dev/cdn-cgi/image/format=webp,width=1200,height=630,fit=crop,quality=90/fmiyg7xfgenllfw0sv5aj2mr/rqshjrhuz6joh86j6qbpervr/d-OP_6Gvjq7yBPlgDv8Lm/logo-techsio.png"
+    }
+  },
+  "/kontakt": {
+    "title": "Kontakt | TechSio",
+    "description": "Kontaktujte nás pro konzultaci vašeho e-commerce projektu. Praha, Česká republika. info@ecommercepartners.cz, +420 123 456 789",
+    "openGraph": {
+      "images": "https://assets.macaly-user-data.dev/cdn-cgi/image/format=webp,width=1200,height=630,fit=crop,quality=90/fmiyg7xfgenllfw0sv5aj2mr/rqshjrhuz6joh86j6qbpervr/d-OP_6Gvjq7yBPlgDv8Lm/logo-techsio.png"
+    }
+  },
+  "/privacy": {
+    "title": "Ochrana osobních údajů | TechSio",
+    "description": "Zásady ochrany osobních údajů společnosti TechSio. Jak zpracováváme a chráníme vaše osobní údaje v souladu s GDPR.",
+    "openGraph": {
+      "images": "https://assets.macaly-user-data.dev/cdn-cgi/image/format=webp,width=1200,height=630,fit=crop,quality=90/fmiyg7xfgenllfw0sv5aj2mr/rqshjrhuz6joh86j6qbpervr/d-OP_6Gvjq7yBPlgDv8Lm/logo-techsio.png"
+    }
+  },
+  "/terms": {
+    "title": "Obchodní podmínky | TechSio",
+    "description": "Obchodní podmínky společnosti TechSio pro poskytování služeb v oblasti e-commerce řešení a webového vývoje.",
+    "openGraph": {
+      "images": "https://assets.macaly-user-data.dev/cdn-cgi/image/format=webp,width=1200,height=630,fit=crop,quality=90/fmiyg7xfgenllfw0sv5aj2mr/rqshjrhuz6joh86j6qbpervr/d-OP_6Gvjq7yBPlgDv8Lm/logo-techsio.png"
+    }
+  }
+}
