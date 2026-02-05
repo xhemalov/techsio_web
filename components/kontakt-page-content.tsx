@@ -108,10 +108,9 @@ export default function KontaktPageContent() {
             {contactMethods.map((method, index) => {
               const IconComponent = method.icon;
               return (
-                <a 
-                  key={index} 
-                  href={method.href}
-                  className="brand-card-secondary p-6 rounded-lg border border-transparent transition-colors duration-300 block"
+                <div
+                  key={index}
+                  className="brand-card-secondary p-6 rounded-lg border border-transparent transition-colors duration-300"
                 >
                   <div className="flex items-start space-x-4">
                     <div className="brand-icon-container-primary">
@@ -129,7 +128,7 @@ export default function KontaktPageContent() {
                       </p>
                     </div>
                   </div>
-                </a>
+                </div>
               );
             })}
           </div>
