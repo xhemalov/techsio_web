@@ -3,15 +3,12 @@
 
 "use client";
 
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { ArrowLeft, TrendingUp, CheckCircle } from 'lucide-react';
 
 export default function TechCorpPageContent() {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Navigation />
       
       <main className="pt-20">
         {/* Hero Section */}
@@ -216,7 +213,6 @@ export default function TechCorpPageContent() {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 }
