@@ -254,10 +254,10 @@ export default function FaqPageContent() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
             <a 
-              href="mailto:info@ecommercepartners.cz"
+              href="mailto:pavel.koudelka@naucme.it"
               className="border border-light-gray text-light-gray hover:text-white hover:border-white px-8 py-4 rounded-lg font-unbounded font-semibold uppercase transition-colors duration-200"
             >
-              info@ecommercepartners.cz
+              pavel.koudelka@naucme.it
             </a>
           </div>
         </div>

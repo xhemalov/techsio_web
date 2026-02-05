@@ -8,21 +8,21 @@ const contactMethods = [
   {
     icon: Phone,
     title: 'Telefon',
-    value: '+420 123 456 789',
-    href: 'tel:+420123456789',
+    value: '+420 731 472 822',
+    href: 'tel:+420731472822',
     description: 'Volejte v pracovní dny 9:00 - 17:00'
   },
   {
     icon: Mail,
     title: 'Email',
-    value: 'info@techsio.cz',
-    href: 'mailto:info@techsio.cz',
+    value: 'pavel.koudelka@naucme.it',
+    href: 'mailto:pavel.koudelka@naucme.it',
     description: 'Odpovídáme do 24 hodin'
   },
   {
     icon: MapPin,
     title: 'Adresa',
-    value: 'Praha, Česká republika',
+    value: 'Školní 174, Český Těšín, Mosty, 735 62',
     href: '#',
     description: 'Osobní schůzky po domluvě'
   },
@@ -194,7 +194,7 @@ export default function KontaktPageContent() {
                   value={formData.phone}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-primary-black border border-light-gray/20 rounded-lg text-white font-inter focus:border-primary-red focus:outline-none transition-colors duration-200"
-                  placeholder="+420 123 456 789"
+                  placeholder="+420 731 472 822"
                 />
               </div>
               <div>
@@ -378,14 +378,14 @@ export default function KontaktPageContent() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a 
-              href="tel:+420123456789"
+              href="tel:+420731472822"
               className="brand-button-primary inline-flex items-center"
             >
               <Phone className="mr-2 h-5 w-5" />
               <span>Zavolat nyní</span>
             </a>
             <a 
-              href="mailto:info@techsio.cz"
+              href="mailto:pavel.koudelka@naucme.it"
               className="border border-light-gray text-light-gray hover:text-white hover:border-white px-8 py-4 rounded-lg font-unbounded font-semibold uppercase transition-colors duration-200 inline-flex items-center"
             >
               <MessageSquare className="mr-2 h-5 w-5" />
