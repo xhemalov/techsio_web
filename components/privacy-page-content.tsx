@@ -4,13 +4,10 @@
 
 "use client";
 
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 
 export default function PrivacyPageContent() {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Navigation />
       
       <main className="pt-20">
         <div className="container mx-auto px-4 py-16">
@@ -142,7 +139,6 @@ export default function PrivacyPageContent() {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 }

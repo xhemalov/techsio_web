@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { Check, X } from 'lucide-react';
 
+const CHECK_COLOR = '#A9FF0A';
+
 const comparisonData = [
   {
     feature: 'Flexibilita funkcí',
@@ -54,7 +56,7 @@ const comparisonData = [
 
 function StatusIcon({ status }: { status: boolean | 'limited' | 'medium' }) {
   if (status === true) {
-    return <Check size={20} className="text-brand-red" />;
+    return <Check size={20} style={{ color: CHECK_COLOR }} />;
   }
   if (status === 'limited' || status === 'medium') {
     return <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>;
@@ -125,7 +127,7 @@ export default function ComparisonSection() {
           {/* Legend */}
           <div className="flex justify-center space-x-8 mt-8 text-sm font-inter">
             <div className="flex items-center space-x-2">
-              <Check size={16} className="text-brand-red" />
+              <Check size={16} style={{ color: CHECK_COLOR }} />
               <span className="text-brand-gray-light">Plná podpora</span>
             </div>
             <div className="flex items-center space-x-2">

@@ -90,25 +90,25 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <Mail size={16} className="text-primary-red" />
                 <a
-                  href="mailto:info@techsio.cz"
+                  href="mailto:pavel.koudelka@naucme.it"
                   className="text-light-gray hover:text-primary-red font-inter transition-colors duration-300"
                 >
-                  info@techsio.cz
+                  pavel.koudelka@naucme.it
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={16} className="text-primary-red" />
                 <a
-                  href="tel:+420123456789"
+                  href="tel:+420731472822"
                   className="text-light-gray hover:text-primary-red font-inter transition-colors duration-300"
                 >
-                  +420 123 456 789
+                  +420 731 472 822
                 </a>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin size={16} className="text-primary-red mt-1" />
                 <span className="text-light-gray font-inter">
-                  Praha, Česká republika
+                  Školní 174, Český Těšín, <br />Mosty, 735 62
                 </span>
               </div>
             </div>

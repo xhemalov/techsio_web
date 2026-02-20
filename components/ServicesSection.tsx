@@ -179,7 +179,7 @@ export default function ProcessSection() {
                 REZERVOVAT KONZULTACI
               </a>
               <a 
-                href="tel:+420123456789"
+                href="tel:+420731472822"
                 className="border border-white text-white hover:bg-white hover:text-primary-black px-8 py-3 rounded-lg font-unbounded font-semibold uppercase transition-all duration-200"
               >
                 ZAVOLAT NYNÍ
