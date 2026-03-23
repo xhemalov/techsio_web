@@ -150,7 +150,7 @@ export default function ComparisonSection() {
             Promluvme si o tom, jak vám řešení na míru pomůže překonat omezení současných platforem.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/kontakt" className="brand-button-primary">
+            <Link href="/#kontakt" className="brand-button-primary">
               Rezervovat konzultaci
             </Link>
             <Link href="/portfolio" className="brand-button-secondary">

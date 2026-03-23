@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import siteMetadata from '@/app/metadata.json';
 import TechCorpPageContent from '@/components/techcorp-page-content';
 
 export const metadata: Metadata = {

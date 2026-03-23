@@ -86,12 +86,12 @@ export default function IntegracePageContent() {
               platebními branami a dopravci. Eliminujte manuální práci a chyby.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link href="/kontakt" className="brand-button-primary inline-flex items-center">
+              <Link href="/#kontakt" className="brand-button-primary inline-flex items-center">
                 <span>Konzultace integrace</span>
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-              <Link href="/portfolio/smartbusiness" className="border border-light-gray text-light-gray hover:text-white hover:border-white px-8 py-4 rounded-lg font-inter font-medium transition-colors duration-200">
-                Příklad integrace
+              <Link href="/portfolio" className="border border-light-gray text-light-gray hover:text-white hover:border-white px-8 py-4 rounded-lg font-inter font-medium transition-colors duration-200">
+                Ukázka projektů
               </Link>
             </div>
           </div>
@@ -229,7 +229,7 @@ export default function IntegracePageContent() {
           <p className="text-xl text-light-gray mb-8 leading-relaxed">
             Promluvme si o vašich systémech a najděme nejefektivnější způsob jejich propojení.
           </p>
-          <Link href="/kontakt" className="bg-primary-red hover:bg-secondary-red text-white px-8 py-4 rounded-lg font-inter font-medium transition-colors duration-200 inline-flex items-center">
+          <Link href="/#kontakt" className="bg-primary-red hover:bg-secondary-red text-white px-8 py-4 rounded-lg font-inter font-medium transition-colors duration-200 inline-flex items-center">
             <span>Konzultace integrace</span>
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>

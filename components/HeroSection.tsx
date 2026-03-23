@@ -21,7 +21,7 @@ export default function HeroSection() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-up" style={{animationDelay: '0.4s'}}>
-            <Link href="/sluzby/konzultace">
+            <Link href="/#kontakt">
               <Button size="lg" className="min-w-[280px]">
                 <span className="flex items-center">
                   REZERVOVAT KONZULTACI

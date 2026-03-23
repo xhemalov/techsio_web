@@ -1,18 +1,16 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
 
 const services = [
-  { name: 'E-commerce řešení', href: '/sluzby/ecommerce' },
-  { name: 'Systémové integrace', href: '/sluzby/integrace' },
-  { name: 'Konzultace', href: '/sluzby/konzultace' },
-  { name: 'SEO & Reporting', href: '/sluzby/seo' },
+  { name: 'E-commerce řešení', href: '/ecommerce' },
+  { name: 'Systémové integrace', href: '/integrace' },
+  { name: 'Konzultace', href: '/#kontakt' },
 ];
 
 const company = [
-  { name: 'O nás', href: '/o-nas' },
+  { name: 'O nás', href: '/#o-nas' },
   { name: 'Portfolio', href: '/portfolio' },
-  { name: 'Proces spolupráce', href: '/proces' },
-  { name: 'FAQ', href: '/faq' },
 ];
 
 export default function Footer() {
@@ -20,12 +18,13 @@ export default function Footer() {
     <footer className="bg-primary-black border-t border-dark-gray">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center">
-              <img 
-                src="https://assets.macaly-user-data.dev/cdn-cgi/image/format=webp,width=2000,height=2000,fit=scale-down,quality=90,anim=true/fmiyg7xfgenllfw0sv5aj2mr/rqshjrhuz6joh86j6qbpervr/d-OP_6Gvjq7yBPlgDv8Lm/logo-techsio.png"
-                alt="TechSio Logo"
+              <Image
+                src="/techsio-logo.svg"
+                alt="Techsio Logo"
+                width={320}
+                height={80}
                 className="h-8 w-auto object-contain"
               />
             </Link>
@@ -43,9 +42,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services */}
           <div className="space-y-6">
-            <h3 className="font-unbounded font-bold text-white text-lg uppercase" style={{lineHeight: '1.2'}}>
+            <h3 className="font-unbounded font-bold text-white text-lg uppercase" style={{ lineHeight: '1.2' }}>
               Služby
             </h3>
             <ul className="space-y-3">
@@ -62,9 +60,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
           <div className="space-y-6">
-            <h3 className="font-unbounded font-bold text-white text-lg uppercase" style={{lineHeight: '1.2'}}>
+            <h3 className="font-unbounded font-bold text-white text-lg uppercase" style={{ lineHeight: '1.2' }}>
               Společnost
             </h3>
             <ul className="space-y-3">
@@ -81,9 +78,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div className="space-y-6">
-            <h3 className="font-unbounded font-bold text-white text-lg uppercase" style={{lineHeight: '1.2'}}>
+            <h3 className="font-unbounded font-bold text-white text-lg uppercase" style={{ lineHeight: '1.2' }}>
               Kontakt
             </h3>
             <div className="space-y-4">
@@ -113,7 +109,7 @@ export default function Footer() {
               </div>
             </div>
             <Link
-              href="/kontakt"
+              href="/#kontakt"
               className="bg-primary-red hover:bg-secondary-red text-white px-6 py-2 rounded-lg font-unbounded font-semibold uppercase transition-colors duration-200 inline-block text-sm"
             >
               Kontaktujte nás
@@ -121,29 +117,12 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-dark-gray mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-dark-gray mt-12 pt-8 text-center">
           <p className="text-light-gray font-inter text-sm">
             © 2025 Techsio. Všechna práva vyhrazena.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="text-light-gray hover:text-primary-red font-inter text-sm transition-colors duration-300">
-              Ochrana osobních údajů
-            </Link>
-            <Link href="/terms" className="text-light-gray hover:text-primary-red font-inter text-sm transition-colors duration-300">
-              Obchodní podmínky
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
   );
 }
-
-
-
-
-
-
-
-

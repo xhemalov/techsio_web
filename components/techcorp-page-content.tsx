@@ -3,6 +3,7 @@
 
 "use client";
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, TrendingUp, CheckCircle } from 'lucide-react';
 
@@ -60,9 +61,11 @@ export default function TechCorpPageContent() {
               </div>
               
               <div className="relative">
-                <img 
+                <Image
                   src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" 
                   alt="TechCorp B2B Platform"
+                  width={800}
+                  height={600}
                   className="w-full h-auto rounded-lg shadow-2xl"
                 />
               </div>
@@ -201,7 +204,7 @@ export default function TechCorpPageContent() {
                 Promluvme si o vašem B2B projektu a najděme nejlepší řešení pro váš byznys.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/kontakt" className="bg-brand-red hover:bg-red-700 text-white px-8 py-3 rounded-lg font-unbounded font-semibold uppercase transition-colors">
+                <Link href="/#kontakt" className="bg-brand-red hover:bg-red-700 text-white px-8 py-3 rounded-lg font-unbounded font-semibold uppercase transition-colors">
                   Začít náš projekt
                 </Link>
                 <Link href="/portfolio" className="border border-gray-600 hover:border-white text-white px-8 py-3 rounded-lg font-unbounded font-semibold uppercase transition-colors">

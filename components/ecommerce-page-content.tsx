@@ -55,7 +55,7 @@ export default function EcommercePageContent() {
               Bez omezení, s plnou kontrolou a nekonečnými možnostmi integrace.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link href="/kontakt" className="brand-button-primary inline-flex items-center">
+              <Link href="/#kontakt" className="brand-button-primary inline-flex items-center">
                 <span>Konzultace zdarma</span>
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -149,7 +149,7 @@ export default function EcommercePageContent() {
           <p className="text-xl text-light-gray mb-8 leading-relaxed">
             Každý projekt začíná konzultací. Promluvme si o vašich potřebách a najděme nejlepší řešení.
           </p>
-          <Link href="/kontakt" className="brand-button-primary inline-flex items-center">
+          <Link href="/#kontakt" className="brand-button-primary inline-flex items-center">
             <span>Rezervovat konzultaci</span>
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>

@@ -3,10 +3,18 @@ import { useEffect } from "react";
 
 export default function ChunkErrorReload() {
   useEffect(() => {
-    function handler(e: any) {
-      const err = (e && (e.reason || e.error || e)) || {};
-      const name = err?.name || "";
-      const message = err?.message || "";
+    function handler(event: PromiseRejectionEvent | ErrorEvent) {
+      const candidate =
+        event instanceof PromiseRejectionEvent
+          ? event.reason
+          : event.error ?? event.message;
+      const err =
+        typeof candidate === "object" && candidate !== null
+          ? candidate
+          : { message: String(candidate ?? "") };
+      const name = "name" in err && typeof err.name === "string" ? err.name : "";
+      const message =
+        "message" in err && typeof err.message === "string" ? err.message : "";
       const isChunkError =
         name === "ChunkLoadError" || /Loading chunk .* failed/i.test(message);
 
@@ -24,7 +32,7 @@ export default function ChunkErrorReload() {
             );
             sessionStorage.removeItem(key);
           }
-        } catch (err) {
+        } catch {
           console.log("[ChunkErrorReload] sessionStorage unavailable, reloading once.");
           window.location.reload();
         }

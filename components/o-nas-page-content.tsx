@@ -9,6 +9,7 @@
 
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { Users, Target, Award, TrendingUp, ArrowRight, Check } from 'lucide-react';
 
@@ -90,9 +91,16 @@ const team = [
   }
 ];
 
-export default function ONasPageContent() {
+type ONasPageContentProps = {
+  embedded?: boolean;
+};
+
+export default function ONasPageContent({ embedded = false }: ONasPageContentProps) {
   return (
-    <div className="min-h-screen bg-primary-black text-white">
+    <div
+      id="o-nas"
+      className={embedded ? "scroll-mt-16 bg-primary-black text-white" : "min-h-screen bg-primary-black text-white"}
+    >
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -226,9 +234,11 @@ export default function ONasPageContent() {
             {team.map((member, index) => (
               <div key={index} className="text-center space-y-6">
                 <div className="w-48 h-48 mx-auto rounded-full overflow-hidden">
-                  <img 
+                  <Image
                     src={member.image} 
                     alt={member.name}
+                    width={300}
+                    height={300}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -260,7 +270,7 @@ export default function ONasPageContent() {
             Každý projekt začíná rozhovorem. Promluvme si o vašich cílech a najděme nejlepší řešení.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link href="/kontakt" className="brand-button-primary inline-flex items-center">
+            <Link href="/#kontakt" className="brand-button-primary inline-flex items-center">
               <span>Začít náš projekt</span>
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>

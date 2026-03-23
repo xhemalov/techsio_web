@@ -1,2 +1,3 @@
-# macaly-rqshjrhuz6joh86j6qbpervr
-Macaly chat https://www.macaly.com/chat/rqshjrhuz6joh86j6qbpervr
+# Techsio Web
+
+Next.js marketing site for Techsio.
