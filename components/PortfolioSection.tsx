@@ -6,7 +6,6 @@ import { ArrowRight, TrendingUp } from 'lucide-react';
 import { useState } from 'react';
 
 const featuredProject = {
-  id: 1,
   title: 'TechCorp B2B Platform',
   category: 'B2B E-commerce',
   description:
@@ -33,7 +32,7 @@ export default function PortfolioSection() {
           </h2>
           <p className="text-xl text-brand-gray-light font-inter max-w-3xl mx-auto leading-relaxed">
             Podívejte se na <span className="text-white font-semibold">reálné výsledky</span> našich klientů.
-            Každý projekt je příběhem úspěchu a růstu.
+            Každý projekt je příběhem růstu a obchodního dopadu.
           </p>
         </div>
 
@@ -117,17 +116,12 @@ export default function PortfolioSection() {
           <h3 className="font-unbounded font-bold text-white text-2xl uppercase" style={{ lineHeight: '1.2' }}>
             Chcete podobné <span className="text-brand-red">výsledky</span>?
           </h3>
-          <p className="text-brand-gray-light font-inter text-lg max-w-2xl mx-auto">
-            Každý projekt začíná rozhovorem. Promluvme si o vašich cílech a najděme nejlepší řešení.
+          <p className="text-brand-gray-light font-inter text-lg max-w-2xl mx-auto leading-relaxed">
+            Každý projekt začíná rozhovorem. Probereme vaše cíle a navrhneme řešení, které obstojí i při růstu.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/#kontakt" className="brand-button-primary">
-              Začít náš projekt
-            </Link>
-            <Link href="/portfolio" className="brand-button-secondary">
-              NAŠE PORTFOLIO
-            </Link>
-          </div>
+          <Link href="/#kontakt" className="brand-button-primary">
+            Rezervovat konzultaci
+          </Link>
         </div>
       </div>
     </section>

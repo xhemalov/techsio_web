@@ -24,7 +24,7 @@ export default function RootLayout({
         >
           <ChunkErrorReload />
           <Navigation />
-          <main className="pt-16">
+          <main>
             {children}
           </main>
           <Footer />

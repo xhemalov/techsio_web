@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ShoppingCart, Settings, MessageSquare, ArrowRight } from 'lucide-react';
+import { ArrowRight, MessageSquare, Settings, ShoppingCart } from 'lucide-react';
 
 const services = [
   {
@@ -46,11 +46,12 @@ export default function ServicesOverview() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((service, index) => {
+          {services.map((service) => {
             const IconComponent = service.icon;
+
             return (
               <Link
-                key={index}
+                key={service.href}
                 href={service.href}
                 className="brand-card-secondary rounded-lg group border border-transparent group-hover:border-white transition-all duration-300 cursor-pointer block"
               >
@@ -63,18 +64,16 @@ export default function ServicesOverview() {
                       <h3 className="font-unbounded font-bold text-white text-xl uppercase" style={{ lineHeight: '1.2' }}>
                         {service.title}
                       </h3>
-                      <p className="font-unbounded font-bold text-brand-red text-xl uppercase">
-                        {service.subtitle}
-                      </p>
+                      <p className="font-unbounded font-bold text-brand-red text-xl uppercase">{service.subtitle}</p>
                     </div>
                   </div>
 
                   <p className="text-brand-gray-light font-inter leading-relaxed">{service.description}</p>
 
                   <div className="grid grid-cols-2 gap-2">
-                    {service.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-2">
-                        <div className="w-1.5 h-1.5 bg-brand-red rounded-full"></div>
+                    {service.features.map((feature) => (
+                      <div key={feature} className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 bg-brand-red rounded-full" />
                         <span className="text-sm text-brand-gray-light font-inter">{feature}</span>
                       </div>
                     ))}
@@ -88,15 +87,6 @@ export default function ServicesOverview() {
               </Link>
             );
           })}
-        </div>
-
-        <div className="text-center mt-16">
-          <p className="text-brand-gray-light font-inter text-lg mb-6">
-            Potřebujete kombinaci více služeb?
-          </p>
-          <Link href="/#kontakt" className="brand-button-primary">
-            Promluvme si o vašem projektu
-          </Link>
         </div>
       </div>
     </section>

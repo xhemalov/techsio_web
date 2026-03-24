@@ -18,9 +18,9 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-primary-black/95 backdrop-blur-sm border-b border-dark-gray">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="sticky top-0 z-50 w-full border-b border-dark-gray bg-primary-black/95 backdrop-blur-sm">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 w-full items-center justify-between gap-6">
           <div className="flex items-center">
             <Link href="/">
               <Image

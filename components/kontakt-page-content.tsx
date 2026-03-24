@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, Phone, MapPin, Clock, MessageSquare, Calendar } from 'lucide-react';
+import { Calendar, Clock, Mail, MapPin, Phone } from 'lucide-react';
 import { useState } from 'react';
 
 const contactMethods = [
@@ -22,7 +22,7 @@ const contactMethods = [
     icon: MapPin,
     title: 'Adresa',
     value: 'Školní 174, Český Těšín, Mosty, 735 62',
-    href: '#',
+    href: '',
     description: 'Osobní schůzky po domluvě',
   },
   {
@@ -47,271 +47,260 @@ type KontaktPageContentProps = {
   embedded?: boolean;
 };
 
+type ContactFormState = {
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  service: string;
+  message: string;
+  budget: string;
+};
+
+const initialFormState: ContactFormState = {
+  name: '',
+  email: '',
+  phone: '',
+  company: '',
+  service: '',
+  message: '',
+  budget: '',
+};
+
 export default function KontaktPageContent({ embedded = false }: KontaktPageContentProps) {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    service: '',
-    message: '',
-    budget: '',
-  });
+  const [formData, setFormData] = useState<ContactFormState>(initialFormState);
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    const { name, value } = e.target;
+    const { name, value } = event.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     console.log('Form submitted:', formData);
     alert('Děkujeme za vaši zprávu. Ozveme se vám do 24 hodin.');
   };
 
   return (
-    <div
+    <section
       id="kontakt"
-      className={embedded ? "scroll-mt-16 bg-primary-black text-white" : "min-h-screen bg-primary-black text-white"}
+      className={`${embedded ? 'scroll-mt-16' : 'min-h-screen'} bg-primary-black px-4 py-20 text-white sm:px-6 lg:px-8`}
     >
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-8">
-            <h1 className="font-unbounded font-bold text-4xl md:text-6xl lg:text-7xl" style={{ lineHeight: '1.2' }}>
-              POJĎME SI <span className="text-primary-red">PROMLUVIT</span>
-            </h1>
-            <p className="font-inter text-lg sm:text-xl md:text-2xl text-light-gray max-w-4xl mx-auto leading-relaxed">
-              Máte projekt na mysli? Potřebujete poradit s e-commerce strategií?
-              Kontaktujte nás a promluvme si o vašich cílech.
-            </p>
-            <div className="inline-flex items-center space-x-2 bg-primary-red/20 text-primary-red px-4 py-2 rounded-full text-sm font-medium">
-              <Clock size={16} />
-              <span>Odpovídáme do 24 hodin</span>
-            </div>
+      <div className="max-w-7xl mx-auto space-y-16">
+        <div className="text-center space-y-6">
+          <div className="inline-flex items-center space-x-2 rounded-full bg-primary-red/20 px-4 py-2 text-sm font-medium text-primary-red">
+            <Clock size={16} />
+            <span>Odpovídáme do 24 hodin</span>
           </div>
+          <h2 className="font-unbounded text-4xl font-bold md:text-5xl lg:text-6xl" style={{ lineHeight: '1.2' }}>
+            POJĎME SI <span className="text-primary-red">PROMLUVIT</span>
+          </h2>
+          <p className="mx-auto max-w-4xl font-inter text-lg leading-relaxed text-light-gray sm:text-xl md:text-2xl">
+            Máte projekt na mysli? Potřebujete poradit s e-commerce strategií nebo integracemi?
+            Ozvěte se a probereme další krok.
+          </p>
         </div>
-      </section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-dark-gray">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-unbounded font-bold text-3xl md:text-4xl mb-6" style={{ lineHeight: '1.2' }}>
-              ZPŮSOBY <span className="text-primary-red">KONTAKTU</span>
-            </h2>
-            <p className="text-xl text-light-gray max-w-3xl mx-auto">
-              Vyberte si způsob komunikace, který vám vyhovuje
-            </p>
-          </div>
+        <div className="grid grid-cols-1 gap-10 xl:grid-cols-[0.9fr_1.1fr]">
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <h3 className="font-unbounded text-2xl font-bold text-white md:text-3xl" style={{ lineHeight: '1.2' }}>
+                Rychlé cesty ke kontaktu
+              </h3>
+              <p className="font-inter text-lg leading-relaxed text-light-gray">
+                Pokud nechcete hned vyplňovat formulář, zavolejte nebo napište. Konzultaci si můžete rezervovat i přímo
+                přes tlačítko níže.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {contactMethods.map((method, index) => {
-              const IconComponent = method.icon;
-              return (
-                <div
-                  key={index}
-                  className="brand-card-secondary p-6 rounded-lg border border-transparent transition-colors duration-300"
-                >
-                  <div className="flex items-start space-x-4">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-1">
+              {contactMethods.map((method) => {
+                const IconComponent = method.icon;
+                const cardClassName =
+                  'brand-card-secondary block rounded-lg border border-dark-gray p-6 transition-colors duration-300 hover:border-white';
+
+                const content = (
+                  <>
                     <div className="brand-icon-container-primary">
                       <IconComponent size={20} className="text-primary-red" />
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-unbounded font-bold text-white text-lg mb-2" style={{ lineHeight: '1.2' }}>
+                    <div className="min-w-0 flex-1 space-y-2">
+                      <h4 className="font-unbounded text-lg font-bold text-white" style={{ lineHeight: '1.2' }}>
                         {method.title}
-                      </h3>
-                      <span className="text-primary-red font-inter font-semibold hover:text-white transition-colors duration-200 block mb-2 break-words overflow-wrap-anywhere">
-                        {method.value}
-                      </span>
-                      <p className="text-light-gray font-inter text-sm">{method.description}</p>
+                      </h4>
+                      <div className="break-words font-inter font-semibold text-primary-red">{method.value}</div>
+                      <p className="font-inter text-sm text-light-gray">{method.description}</p>
                     </div>
+                  </>
+                );
+
+                if (method.href) {
+                  return (
+                    <a key={method.title} href={method.href} className={cardClassName}>
+                      <div className="flex items-start gap-4">{content}</div>
+                    </a>
+                  );
+                }
+
+                return (
+                  <div key={method.title} className={cardClassName}>
+                    <div className="flex items-start gap-4">{content}</div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section id="contact-form" className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-unbounded font-bold text-3xl md:text-4xl mb-6" style={{ lineHeight: '1.2' }}>
-              NAPIŠTE NÁM <span className="text-primary-red">ZPRÁVU</span>
-            </h2>
-            <p className="text-xl text-light-gray max-w-3xl mx-auto">
-              Vyplňte formulář a my se vám ozveme do 24 hodin
-            </p>
+                );
+              })}
+            </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="bg-dark-gray p-8 rounded-lg space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="name" className="block text-white font-inter font-semibold mb-2">
-                  Jméno a příjmení *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-primary-black border border-light-gray/20 rounded-lg text-white font-inter focus:border-primary-red focus:outline-none transition-colors duration-200"
-                  placeholder="Vaše jméno"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-white font-inter font-semibold mb-2">
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-primary-black border border-light-gray/20 rounded-lg text-white font-inter focus:border-primary-red focus:outline-none transition-colors duration-200"
-                  placeholder="vas@email.cz"
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="phone" className="block text-white font-inter font-semibold mb-2">
-                  Telefon
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-primary-black border border-light-gray/20 rounded-lg text-white font-inter focus:border-primary-red focus:outline-none transition-colors duration-200"
-                  placeholder="+420 731 472 822"
-                />
-              </div>
-              <div>
-                <label htmlFor="company" className="block text-white font-inter font-semibold mb-2">
-                  Společnost
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-primary-black border border-light-gray/20 rounded-lg text-white font-inter focus:border-primary-red focus:outline-none transition-colors duration-200"
-                  placeholder="Název společnosti"
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="service" className="block text-white font-inter font-semibold mb-2">
-                  Služba *
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  required
-                  value={formData.service}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-primary-black border border-light-gray/20 rounded-lg text-white font-inter focus:border-primary-red focus:outline-none transition-colors duration-200"
-                >
-                  <option value="">Vyberte službu</option>
-                  {services.map((service, index) => (
-                    <option key={index} value={service}>
-                      {service}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label htmlFor="budget" className="block text-white font-inter font-semibold mb-2">
-                  Orientační rozpočet
-                </label>
-                <select
-                  id="budget"
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-primary-black border border-light-gray/20 rounded-lg text-white font-inter focus:border-primary-red focus:outline-none transition-colors duration-200"
-                >
-                  <option value="">Vyberte rozpočet</option>
-                  <option value="do-100k">Do 100 000 Kč</option>
-                  <option value="100k-300k">100 000 - 300 000 Kč</option>
-                  <option value="300k-500k">300 000 - 500 000 Kč</option>
-                  <option value="500k-1m">500 000 - 1 000 000 Kč</option>
-                  <option value="nad-1m">Nad 1 000 000 Kč</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-white font-inter font-semibold mb-2">
-                Zpráva *
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows={6}
-                value={formData.message}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-primary-black border border-light-gray/20 rounded-lg text-white font-inter focus:border-primary-red focus:outline-none transition-colors duration-200 resize-vertical"
-                placeholder="Popište nám váš projekt, cíle a požadavky..."
-              />
-            </div>
-
-            <div className="text-center">
-              <button
-                type="submit"
-                className="brand-button-primary inline-flex items-center"
-              >
-                <span>Odeslat zprávu</span>
-              </button>
-              <p className="text-light-gray font-inter text-sm mt-4">
-                Odesláním souhlasíte se zpracováním osobních údajů.
+          <div id="contact-form" className="rounded-lg border border-dark-gray bg-dark-gray p-8">
+            <div className="mb-10 space-y-3">
+              <h3 className="font-unbounded text-2xl font-bold text-white md:text-3xl" style={{ lineHeight: '1.2' }}>
+                Napište nám zprávu
+              </h3>
+              <p className="font-inter text-lg leading-relaxed text-light-gray">
+                Vyplňte základní informace a ozveme se s návrhem dalšího postupu.
               </p>
             </div>
-          </form>
-        </div>
-      </section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-unbounded font-bold text-3xl md:text-4xl mb-6" style={{ lineHeight: '1.2' }}>
-            PŘIPRAVENI ZAČÍT <span className="text-primary-red">VÁŠ PROJEKT</span>?
-          </h2>
-          <p className="text-xl text-light-gray mb-8 leading-relaxed">
-            Neváhejte nás kontaktovat. Rádi si s vámi promluvíme o vašich cílech a najdeme nejlepší řešení.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a
-              href="tel:+420731472822"
-              className="brand-button-primary inline-flex items-center"
-            >
-              <Phone className="mr-2 h-5 w-5" />
-              <span>Zavolat nyní</span>
-            </a>
-            <a
-              href="mailto:pavel.koudelka@naucme.it"
-              className="border border-light-gray text-light-gray hover:text-white hover:border-white px-8 py-4 rounded-lg font-unbounded font-semibold uppercase transition-colors duration-200 inline-flex items-center"
-            >
-              <MessageSquare className="mr-2 h-5 w-5" />
-              <span>Napsat email</span>
-            </a>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div>
+                  <label htmlFor="name" className="mb-2 block font-inter font-semibold text-white">
+                    Jméno a příjmení *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full rounded-lg border border-light-gray/20 bg-primary-black px-4 py-3 font-inter text-white transition-colors duration-200 focus:border-primary-red focus:outline-none"
+                    placeholder="Vaše jméno"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="mb-2 block font-inter font-semibold text-white">
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full rounded-lg border border-light-gray/20 bg-primary-black px-4 py-3 font-inter text-white transition-colors duration-200 focus:border-primary-red focus:outline-none"
+                    placeholder="vas@email.cz"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div>
+                  <label htmlFor="phone" className="mb-2 block font-inter font-semibold text-white">
+                    Telefon
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full rounded-lg border border-light-gray/20 bg-primary-black px-4 py-3 font-inter text-white transition-colors duration-200 focus:border-primary-red focus:outline-none"
+                    placeholder="+420 731 472 822"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="company" className="mb-2 block font-inter font-semibold text-white">
+                    Společnost
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleInputChange}
+                    className="w-full rounded-lg border border-light-gray/20 bg-primary-black px-4 py-3 font-inter text-white transition-colors duration-200 focus:border-primary-red focus:outline-none"
+                    placeholder="Název společnosti"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div>
+                  <label htmlFor="service" className="mb-2 block font-inter font-semibold text-white">
+                    Služba *
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    required
+                    value={formData.service}
+                    onChange={handleInputChange}
+                    className="w-full rounded-lg border border-light-gray/20 bg-primary-black px-4 py-3 font-inter text-white transition-colors duration-200 focus:border-primary-red focus:outline-none"
+                  >
+                    <option value="">Vyberte službu</option>
+                    {services.map((service) => (
+                      <option key={service} value={service}>
+                        {service}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="budget" className="mb-2 block font-inter font-semibold text-white">
+                    Orientační rozpočet
+                  </label>
+                  <select
+                    id="budget"
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleInputChange}
+                    className="w-full rounded-lg border border-light-gray/20 bg-primary-black px-4 py-3 font-inter text-white transition-colors duration-200 focus:border-primary-red focus:outline-none"
+                  >
+                    <option value="">Vyberte rozpočet</option>
+                    <option value="do-100k">Do 100 000 Kč</option>
+                    <option value="100k-300k">100 000 - 300 000 Kč</option>
+                    <option value="300k-500k">300 000 - 500 000 Kč</option>
+                    <option value="500k-1m">500 000 - 1 000 000 Kč</option>
+                    <option value="nad-1m">Nad 1 000 000 Kč</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="message" className="mb-2 block font-inter font-semibold text-white">
+                  Zpráva *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={6}
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  className="w-full resize-y rounded-lg border border-light-gray/20 bg-primary-black px-4 py-3 font-inter text-white transition-colors duration-200 focus:border-primary-red focus:outline-none"
+                  placeholder="Popište nám váš projekt, cíle a požadavky..."
+                />
+              </div>
+
+              <div className="text-center">
+                <button type="submit" className="brand-button-primary inline-flex items-center">
+                  Odeslat zprávu
+                </button>
+                <p className="mt-4 font-inter text-sm text-light-gray">
+                  Odesláním souhlasíte se zpracováním osobních údajů.
+                </p>
+              </div>
+            </form>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
