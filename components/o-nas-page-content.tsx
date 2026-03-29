@@ -45,18 +45,18 @@ export default function ONasPageContent({ embedded = false }: ONasPageContentPro
       className={`${embedded ? 'scroll-mt-16' : 'min-h-screen'} bg-primary-black text-white px-4 py-20 sm:px-6 lg:px-8`}
     >
       <div className="max-w-7xl mx-auto space-y-16">
-        <div className="max-w-4xl space-y-6">
+        <div className="space-y-6">
           <h2 className="font-unbounded font-bold text-4xl md:text-5xl" style={{ lineHeight: '1.2' }}>
             Technologie stavíme tak, aby <span className="text-primary-red">pomáhaly růstu</span>, ne ho brzdily.
           </h2>
-          <p className="text-lg md:text-xl text-light-gray font-inter leading-relaxed">
+          <p className="max-w-6xl text-lg md:text-xl text-light-gray font-inter leading-relaxed">
             Navrhujeme a dodáváme e-commerce řešení pro firmy, které potřebují stabilní provoz, spolehlivé integrace
             a prostor pro další rozvoj. Neprodáváme šablonu. Stavíme řešení, které odpovídá vašemu byznysu.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
             {expertise.map((item) => (
-              <div key={item} className="flex items-start gap-3 rounded-lg border border-dark-gray bg-dark-gray/60 px-4 py-3">
+              <div key={item} className="flex h-full items-start gap-3 rounded-lg border border-dark-gray bg-dark-gray/60 px-4 py-3">
                 <Check size={16} className="mt-1 flex-shrink-0 text-primary-red" />
                 <span className="font-inter text-light-gray">{item}</span>
               </div>

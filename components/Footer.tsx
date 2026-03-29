@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
 
+const currentYear = new Date().getFullYear();
+
 const services = [
   { name: 'E-commerce řešení', href: '/ecommerce' },
   { name: 'Systémové integrace', href: '/integrace' },
@@ -119,7 +121,7 @@ export default function Footer() {
 
         <div className="border-t border-dark-gray mt-12 pt-8 text-center">
           <p className="text-light-gray font-inter text-sm">
-            © 2025 Techsio. Všechna práva vyhrazena.
+            © {currentYear} Techsio. Všechna práva vyhrazena.
           </p>
         </div>
       </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { Calendar, Mail, MapPin, Phone } from 'lucide-react';
+import { Calendar, Mail, Phone } from 'lucide-react';
 import { useState } from 'react';
 
 const contactMethods = [
@@ -9,28 +9,18 @@ const contactMethods = [
     title: 'Telefon',
     value: '+420 731 472 822',
     href: 'tel:+420731472822',
-    description: 'Volejte v pracovní dny 9:00 - 17:00',
   },
   {
     icon: Mail,
     title: 'Email',
     value: 'pavel.koudelka@naucme.it',
     href: 'mailto:pavel.koudelka@naucme.it',
-    description: 'Napište nám e-mail',
-  },
-  {
-    icon: MapPin,
-    title: 'Adresa',
-    value: 'Školní 174, Český Těšín, Mosty, 735 62',
-    href: '',
-    description: 'Osobní schůzky po domluvě',
   },
   {
     icon: Calendar,
     title: 'Konzultace',
     value: 'Rezervovat termín',
     href: '#contact-form',
-    description: 'První konzultace zdarma',
   },
 ];
 
@@ -114,7 +104,7 @@ export default function KontaktPageContent({ embedded = false }: KontaktPageCont
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
               {contactMethods.map((method) => {
                 const IconComponent = method.icon;
                 const cardClassName =
@@ -125,27 +115,23 @@ export default function KontaktPageContent({ embedded = false }: KontaktPageCont
                     <div className="brand-icon-container-primary">
                       <IconComponent size={20} className="text-primary-red" />
                     </div>
-                    <div className="min-w-0 flex-1 space-y-2">
-                      <h4 className="font-unbounded text-lg font-bold text-white" style={{ lineHeight: '1.2' }}>
-                        {method.title}
-                      </h4>
+                    <div className="min-w-0 flex-1">
                       <div className="break-words font-inter font-semibold text-primary-red">{method.value}</div>
-                      <p className="font-inter text-sm text-light-gray">{method.description}</p>
                     </div>
                   </>
                 );
 
                 if (method.href) {
                   return (
-                    <a key={method.title} href={method.href} className={cardClassName}>
-                      <div className="flex items-start gap-4">{content}</div>
+                    <a key={method.title} href={method.href} className={cardClassName} aria-label={method.title}>
+                      <div className="flex items-center gap-4">{content}</div>
                     </a>
                   );
                 }
 
                 return (
                   <div key={method.title} className={cardClassName}>
-                    <div className="flex items-start gap-4">{content}</div>
+                    <div className="flex items-center gap-4">{content}</div>
                   </div>
                 );
               })}
