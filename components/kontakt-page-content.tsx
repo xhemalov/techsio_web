@@ -1,6 +1,6 @@
 'use client';
 
-import { Calendar, Clock, Mail, MapPin, Phone } from 'lucide-react';
+import { Calendar, Mail, MapPin, Phone } from 'lucide-react';
 import { useState } from 'react';
 
 const contactMethods = [
@@ -16,7 +16,7 @@ const contactMethods = [
     title: 'Email',
     value: 'pavel.koudelka@naucme.it',
     href: 'mailto:pavel.koudelka@naucme.it',
-    description: 'Odpovídáme do 24 hodin',
+    description: 'Napište nám e-mail',
   },
   {
     icon: MapPin,
@@ -83,7 +83,7 @@ export default function KontaktPageContent({ embedded = false }: KontaktPageCont
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log('Form submitted:', formData);
-    alert('Děkujeme za vaši zprávu. Ozveme se vám do 24 hodin.');
+    alert('Děkujeme za vaši zprávu. Brzy se vám ozveme.');
   };
 
   return (
@@ -93,10 +93,6 @@ export default function KontaktPageContent({ embedded = false }: KontaktPageCont
     >
       <div className="max-w-7xl mx-auto space-y-16">
         <div className="text-center space-y-6">
-          <div className="inline-flex items-center space-x-2 rounded-full bg-primary-red/20 px-4 py-2 text-sm font-medium text-primary-red">
-            <Clock size={16} />
-            <span>Odpovídáme do 24 hodin</span>
-          </div>
           <h2 className="font-unbounded text-4xl font-bold md:text-5xl lg:text-6xl" style={{ lineHeight: '1.2' }}>
             POJĎME SI <span className="text-primary-red">PROMLUVIT</span>
           </h2>
@@ -106,7 +102,7 @@ export default function KontaktPageContent({ embedded = false }: KontaktPageCont
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-10 xl:grid-cols-[0.9fr_1.1fr]">
+        <div className="space-y-10">
           <div className="space-y-6">
             <div className="space-y-3">
               <h3 className="font-unbounded text-2xl font-bold text-white md:text-3xl" style={{ lineHeight: '1.2' }}>
@@ -118,11 +114,11 @@ export default function KontaktPageContent({ embedded = false }: KontaktPageCont
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-1">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {contactMethods.map((method) => {
                 const IconComponent = method.icon;
                 const cardClassName =
-                  'brand-card-secondary block rounded-lg border border-dark-gray p-6 transition-colors duration-300 hover:border-white';
+                  'brand-card-secondary block h-full rounded-lg border border-dark-gray p-6 transition-colors duration-300 hover:border-white';
 
                 const content = (
                   <>

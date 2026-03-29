@@ -45,7 +45,7 @@ export default function ServicesOverview() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service) => {
             const IconComponent = service.icon;
 
@@ -53,9 +53,9 @@ export default function ServicesOverview() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="brand-card-secondary rounded-lg group border border-transparent group-hover:border-white transition-all duration-300 cursor-pointer block"
+                className="brand-card-secondary block h-full cursor-pointer rounded-lg border border-transparent transition-all duration-300 group group-hover:border-white"
               >
-                <div className="space-y-6 p-6">
+                <div className="flex h-full flex-col space-y-6 p-6">
                   <div className="flex items-start space-x-4">
                     <div className="brand-icon-container-primary">
                       <IconComponent size={20} className="text-primary-red" />

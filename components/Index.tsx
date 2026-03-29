@@ -5,7 +5,7 @@ import PortfolioSection from './PortfolioSection';
 import ONasPageContent from './o-nas-page-content';
 import KontaktPageContent from './kontakt-page-content';
 
-export default function Home() {
+export default function Index() {
   return (
     <div className="min-h-screen bg-primary-black text-white">
       <HeroSection />

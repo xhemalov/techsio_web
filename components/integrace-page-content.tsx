@@ -73,10 +73,6 @@ export default function IntegracePageContent() {
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-8">
-            <div className="inline-flex items-center space-x-2 bg-primary-red/20 text-primary-red px-4 py-2 rounded-full text-sm font-medium">
-              <Settings size={16} />
-              <span>SYSTÉMOVÉ INTEGRACE</span>
-            </div>
             <h1 className="font-unbounded font-bold text-4xl md:text-6xl lg:text-7xl" style={{lineHeight: '1.2'}}>
               PROPOJTE VŠECHNY{' '}
               <span className="text-primary-red">SYSTÉMY</span>

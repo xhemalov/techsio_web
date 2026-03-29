@@ -22,9 +22,6 @@ export default function TechCorpPageContent() {
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <span className="inline-block px-3 py-1 bg-brand-red/20 text-brand-red text-sm font-inter font-medium rounded-full mb-4">
-                  B2B E-commerce
-                </span>
                 <h1 className="font-unbounded font-bold text-4xl md:text-6xl lg:text-7xl mb-6" style={{lineHeight: '1.2'}}>
                   TECHCORP{' '}
                   <span className="text-primary-red">B2B PLATFORM</span>

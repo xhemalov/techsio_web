@@ -43,12 +43,6 @@ const comparisonData: ComparisonItem[] = [
     description: 'Kvalitní řešení vyžaduje čas',
   },
   {
-    feature: 'Měsíční poplatky',
-    custom: false,
-    platform: true,
-    description: 'Žádné licenční poplatky',
-  },
-  {
     feature: 'Vlastnictví dat',
     custom: true,
     platform: false,
@@ -91,14 +85,10 @@ export default function ComparisonSection() {
         <div className="max-w-5xl mx-auto">
           <div className="brand-card overflow-hidden">
             <div className="grid grid-cols-4 gap-4 p-6 border-b border-brand-gray-dark">
-              <div className="col-span-2">
-                <h3 className="font-unbounded font-bold text-white text-lg uppercase" style={{ lineHeight: '1.2' }}>
-                  Vlastnost
-                </h3>
-              </div>
+              <div className="col-span-2" aria-hidden="true" />
               <div className="text-center">
                 <h3 className="font-unbounded font-bold text-brand-red text-lg uppercase" style={{ lineHeight: '1.2' }}>
-                  Na míru
+                  Techsio
                 </h3>
               </div>
               <div className="text-center">

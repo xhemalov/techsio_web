@@ -54,7 +54,7 @@ export default function HeroSection() {
               <div className="text-light-gray font-inter">ÚSPĚŠNÝCH PROJEKTŮ</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-unbounded font-bold text-primary-red mb-2">5+</div>
+              <div className="text-3xl sm:text-4xl font-unbounded font-bold text-primary-red mb-2">15+</div>
               <div className="text-light-gray font-inter">LET ZKUŠENOSTÍ</div>
             </div>
             <div className="text-center">

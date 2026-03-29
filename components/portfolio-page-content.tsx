@@ -9,7 +9,6 @@ const portfolioProjects = [
   {
     id: 1,
     title: 'TechCorp B2B Platform',
-    category: 'B2B E-commerce',
     description:
       'Komplexní B2B platforma s pokročilými funkcemi pro velkoobchod. Firemní účty, více košíků a automatizované objednávky.',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
@@ -20,7 +19,6 @@ const portfolioProjects = [
     ],
     technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Redis'],
     href: '/portfolio/techcorp',
-    featured: true,
   },
 ];
 
@@ -49,7 +47,7 @@ export default function PortfolioPageContent() {
               CELKOVÉ <span className="text-primary-red">VÝSLEDKY</span>
             </h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <div className="text-center">
               <div className="font-unbounded font-bold text-4xl md:text-5xl text-primary-red mb-2">50+</div>
               <p className="text-light-gray font-inter">Dokončených projektů</p>
@@ -61,10 +59,6 @@ export default function PortfolioPageContent() {
             <div className="text-center">
               <div className="font-unbounded font-bold text-4xl md:text-5xl text-primary-red mb-2">150%</div>
               <p className="text-light-gray font-inter">Průměrný nárůst tržeb</p>
-            </div>
-            <div className="text-center">
-              <div className="font-unbounded font-bold text-4xl md:text-5xl text-primary-red mb-2">24/7</div>
-              <p className="text-light-gray font-inter">Technická podpora</p>
             </div>
           </div>
         </div>
@@ -103,13 +97,6 @@ export default function PortfolioPageContent() {
                           <div className="absolute top-4 right-4">
                             <ExternalLink size={24} className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           </div>
-                          {project.featured ? (
-                            <div className="absolute top-4 left-4">
-                              <span className="bg-primary-red text-white px-3 py-1 rounded-full text-sm font-inter font-medium">
-                                Doporučený projekt
-                              </span>
-                            </div>
-                          ) : null}
                         </div>
                       </div>
                     </div>
@@ -118,9 +105,6 @@ export default function PortfolioPageContent() {
 
                 <div className="flex flex-col justify-between space-y-8">
                   <div className="space-y-6">
-                    <span className="inline-block px-3 py-1 bg-primary-red/20 text-primary-red text-sm font-inter font-medium rounded-full">
-                      {project.category}
-                    </span>
                     <h3 className="font-unbounded font-bold text-white text-2xl md:text-3xl" style={{ lineHeight: '1.2' }}>
                       {project.title}
                     </h3>

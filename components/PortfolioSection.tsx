@@ -7,7 +7,6 @@ import { useState } from 'react';
 
 const featuredProject = {
   title: 'TechCorp B2B Platform',
-  category: 'B2B E-commerce',
   description:
     'Komplexní B2B platforma s pokročilými funkcemi pro velkoobchod. Firemní účty, více košíků a automatizované objednávky.',
   image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
@@ -63,9 +62,6 @@ export default function PortfolioSection() {
 
           <div className="flex flex-col justify-between space-y-8">
             <div className="space-y-6">
-              <span className="inline-block px-3 py-1 bg-brand-red/20 text-brand-red text-sm font-inter font-medium rounded-full">
-                {featuredProject.category}
-              </span>
               <h3 className="font-unbounded font-bold text-white text-2xl md:text-3xl" style={{ lineHeight: '1.2' }}>
                 {featuredProject.title}
               </h3>
@@ -110,18 +106,6 @@ export default function PortfolioSection() {
               <ArrowRight size={16} className="text-brand-red" />
             </Link>
           </div>
-        </div>
-
-        <div className="text-center mt-16 space-y-6">
-          <h3 className="font-unbounded font-bold text-white text-2xl uppercase" style={{ lineHeight: '1.2' }}>
-            Chcete podobné <span className="text-brand-red">výsledky</span>?
-          </h3>
-          <p className="text-brand-gray-light font-inter text-lg max-w-2xl mx-auto leading-relaxed">
-            Každý projekt začíná rozhovorem. Probereme vaše cíle a navrhneme řešení, které obstojí i při růstu.
-          </p>
-          <Link href="/#kontakt" className="brand-button-primary">
-            Rezervovat konzultaci
-          </Link>
         </div>
       </div>
     </section>
